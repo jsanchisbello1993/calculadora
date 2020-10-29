@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculadora Co2</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+
+</head>
+
+<body data-spy="scroll" data-target="#fm-nav">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="fm-nav">
+                    <a class="navbar-brand mr-auto" href="#"><img src="arbol.png" width="40px" height="40px"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon menu"></span>
+              </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav ml-auto">
+                            <a class="nav-item nav-link active" href="#c1">Calculadora<span class="sr-only">(current)</span></a>
+                            <a class="nav-item nav-link" href="#c2">Información</a>
+                            <a class="nav-item nav-link" href="#c3">Compensar</a>
+                            <a class="nav-item nav-link" href="#c4">Contacto</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+
+        <div class="row c1" id="c1">
+            <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 mt-4  seccion" id="calculadora">
+
+                <h1 class=" mb-4 mt-4">Calculadora</h1>
+                <div class="table-responsive-md table-responsive-sm mt-4">
+                    <table class="table table-bordered table-hover ">
+                        <tr class="bg-success text-center table-hover " style="color: #fff;">
+                            <th>Combustible</th>
+                            <th>Consumo anual</th>
+                            <th>Unidades de medida física</th>
+                            <th>Factor de conversión</th>
+                            <th>kWh</th>
+                            <th>Factor de emisión (Kg de CO2 eq/kWh)</th>
+                            <th>Kg de CO2 eq</th>
+                            <th><button id="btn-borrar" class="btn btn-danger">Borrar</button></th>
+                        </tr>
+                        <tr class="table-success text-center">
+                            <th>Gas natural</th>
+                            <td><input id="gasnatural" type="number" name="" value=""></td>
+                            <td>Nm3</td>
+                            <td>10,70 - kWh/Nm3</td>
+
+                            <!-- resultado -->
+                            <td class="resultado" id="res-kwh1"></td>
+
+                            <td>0,2016 - Kg de CO2 eq/kWh</td>
+
+                            <!-- resultado -->
+                            <td class="resultado" id="resultado-gasnatural"></td>
+                            <td><button class="btn btn-primary" id="btn-gasnatural" type="button" name="button">Calcular</button>
+                            </td>
+
+                        </tr>
+                        <tr id="hover" class="bg-success text-center" style="color: #fff;">
+                            <th>Gasóleo</th>
+                            <td><input id="gasoleo" type="number" name="" value=""></td>
+                            <td>Litros</td>
+                            <td>10,6 - kWh/l</td>
+
+                            <!-- resultado -->
+                            <td class="resultado" id="res-kwh2"> </td>
+
+                            <td>0,26 - Kg de CO2 eq/kWh</td>
+
+                            <!-- resultado -->
+                            <td class="resultado" id="resultado-gasoleo"></td>
+                            <td><button class="btn btn-primary" id="btn-gasoleo" type="button" name="button">Calcular</button></td>
+                        </tr>
+                        <tr class="table-success text-center">
+                            <th>Fuel</th>
+                            <td><input id="fuel" type="number" name="" value=""></td>
+                            <td>Kg</td>
+                            <td>11,16 - kWh/Kg</td>
+
+                            <!-- resultado -->
+                            <td class="resultado" id="res-kwh3"> </td>
+
+                            <td>0,273 - Kg CO2 eq/kWh</td>
+
+                            <!-- resultado -->
+                            <td class="resultado" id="resultado-fuel"> </td>
+                            <td><button class="btn btn-primary" id="btn-fuel" type="button" name="button">Calcular</button></td>
+                        </tr>
+                        <tr class="bg-success text-center" style="color: #fff;">
+                            <th>GLP Genérico</th>
+                            <td><input type="number" id="glp" name="" value=""></td>
+                            <td>Kg</td>
+                            <td>12,63 - kWh/Kg</td>
+
+                            <!-- resultado -->
+                            <td class="resultado" id="res-kwh4"> </td>
+                            <td>0,234 - Kg CO2 eq/kWh</td>
+
+                            <!-- resultado -->
+                            <td class="resultado" id="resultado-glp"> </td>
+                            <td><button class="btn btn-primary" id="btn-glp" type="button" name="button">Calcular</button></td>
+                        </tr>
+                        <tr class="table-success text-center">
+                            <th>Carbón nacional</th>
+                            <td><input id="carbon" type="number" name="" value=""></td>
+                            <td>Kg</td>
+                            <td>5,697 - kWh/Kg</td>
+
+                            <!-- resultado -->
+                            <td class="resultado" id="res-kwh5"> </td>
+
+                            <td>0,403 - Kg CO2 eq/kWh</td>
+
+                            <!-- resultado -->
+                            <td class="resultado" id="resultado-carbon"> </td>
+                            <td><button class="btn btn-primary" id="btn-carbon" type="button" name="button">Calcular</button></td>
+                        </tr>
+                        <tr class="bg-success text-center" style="color: #fff;">
+                            <th>Carbón de importanción</th>
+                            <td><input id="carbon-importacion" type="number" name="" value=""></td>
+                            <td>Kg</td>
+                            <td>7,091 - kWh/Kg</td>
+
+                            <!-- resultado -->
+                            <td class="resultado" id="res-kwh6"> </td>
+
+                            <td>0,356 - Kg CO2 eq/kWh</td>
+
+                            <!-- resultado -->
+                            <td class="resultado" id="resultado-carbon-imp"> </td>
+                            <td><button class="btn btn-primary" id="btn-carImp" type="button" name="button">Calcular</button></td>
+                        </tr>
+                        <tr class="table-success text-center">
+                            <th>Gas butano</th>
+                            <td><input id="gas-butano" type="number" name="" value=""></td>
+                            <td>Kg</td>
+                            <td>12,43 - kWh/Kg</td>
+
+                            <!-- resultado -->
+                            <td class="resultado" id="res-kwh7"> </td>
+
+                            <td>0,238 - Kg CO2 eq/kWh</td>
+
+                            <!-- resultado -->
+                            <td class="resultado" id="resultado-gas-butano"> </td>
+                            <td><button class="btn btn-primary" id="btn-butano" type="button" name="button">Calcular</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row c2 ">
+            <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 seccion" id="c2" style="margin-top: 200px">
+                <h1 class=" mb-4">Información</h1>
+                <div class="row d-flex justify-content-around ">
+                    <div class="col-xs-12 col-sm-12 col-lg-3 col-md-4 text-white bg-primary p-3 mb-4 nosotros-div">
+                        <h3 class="text-center ">Consumo</h3>
+                        <p class="text-center">A las causas naturales se les suman las ocasionadas por el ser humano. No olvidemos que más del 75 por ciento de las emisiones de CO2 provocadas por el ser humano provienen de los combustibles fósiles, en los que englobamos el
+                            carbón, el gas natural y el petróleo.</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-lg-3 col-md-4 text-white bg-primary p-3 mb-4 nosotros-div">
+                        <h3 class="text-center">¿Que daño hace el CO2?</h3>
+                        <p class="text-center">El exceso de CO2 acidifica los océanos, lo que causa daños en arrecifes, fitoplancton y animales. UNAM/DICYT Las altas concentraciones de dióxido de carbono (CO2) en el planeta no solamente afectan a la atmósfera y generan el calentamiento
+                            global.
+                        </p>
+                    </div>
+                    <div class=" col-sm-12 col-lg-3 col-md-4 text-white bg-primary p-3 mb-4  nosotros-div">
+                        <h3 class="text-center">¿Que es lo que más produce co2?</h3>
+                        <p class="text-center">Combustión de combustibles fósiles y biomasa. A las causas naturales se les suman las ocasionadas por el ser humano. No olvidemos que más del 75 por ciento de las emisiones de CO2 provocadas por el ser humano provienen de los combustibles
+                            fósiles.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row c3 ">
+            <div class="col-xs-12 col-md-12 col-sm-12 d-block seccion" id="c3" style="margin-top: 200px; margin-bottom: 200px">
+                <h1 class="mb-4">Compensar</h1>
+                <div class="row c3 d-flex justify-content-around">
+                    <!-- <div class="col-12 col-md-6 col-lg-3">
+              <div class="row"> -->
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 mb-2  text-center compensar-div2">
+                        <h3 class="text-center"><span></span></h3>
+                        <p class="text-center">Ayudar a mitigar y adaptarse al cambio climático.</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 mb-2  text-center compensar-div">
+                        <h3 class="text-center"><span></span></h3>
+                        <p class="text-center">Al reducir las emisiones de la empresa, de los productos o de los eventos se reduce el impacto ambiental.</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 mb-2 text-center compensar-div">
+                        <h3 class="text-center"><span></span></h3>
+                        <p class="text-center">Reducción de costes asociados al consumo de materias primas o de productos.</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3  text-center  compensar-div1">
+                        <h3 class="text-center"><span></span></h3>
+                        <p class="text-center">Actúa como elemento diferenciador ante la competencia.</p>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="margin-top: 100px;">
+                            <button class="btn btn-primary" type="button" name="button" style="font-size: 40px;">Compensar <span class="spanB"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row c4 ">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-sm-4 col-lg-12 d-block seccion" id="c4">
+                <h1 class="mb-4">Contacto</h1>
+
+
+                <div class="row c4">
+                    <div class="col  mb-4 d-flex justify-content-center">
+                        <form class="formulario" action="" id="formulario" name="formulario">
+                            <div class="contenedor-imputs">
+                                <input type="text" name="nombre" placeholder="Nombre">
+                                <input type="email" name="correo" placeholder="Correo">
+
+                                <div class="mensaje">
+                                    <textarea name="mensaje" rows="6" cols="35"></textarea>
+                                </div>
+                                <div class="terminos">
+                                    <input type="checkbox" name="terminos" id="terminos">
+                                    <label for="terminos">Acepto terminos y condiciones</label>
+                                </div>
+                                <ul class="error" id="error">
+
+                                </ul>
+                            </div>
+                            <input type="submit" class="btn" name="" value="Enviar">
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+
+    <script src="funciones.js" type="text/javascript"></script>
+    <script src="formulario.js" type="text/javascript"></script>
+</body>
+
+</html>
